@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	cheshi</title>
+	<link rel="stylesheet" href="index.css">
+	<style>
+		* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    
+}
+.test {
+    margin: 150px auto;
+    height: 200px;
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: -webkit-pictograph;
+}
+	</style>
+</head>
+<body>
+	<div class="test"></div>
+</body>
+<script>
+	 var str = 'I Love Smiley So Much!!!';
+   var i = 0;
+   function typing(){
+    var divTyping = document.querySelector('.test');
+    if (i <= str.length) {
+     divTyping.innerHTML = str.slice(0, i++) + '_';
+     setTimeout('typing()', 200);//递归调用
+    }
+    else{
+     divTyping.innerHTML = str;//结束打字,移除 _ 光标
+    }
+   }
+setTimeout(function(){
+   
+   typing();
+},2000)
+</script>
+</html>
